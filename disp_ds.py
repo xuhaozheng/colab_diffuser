@@ -12,7 +12,7 @@ def load_cos_dataset(dataset_name, root):
         image_list = []
         disparity_list = []
         disp_reader=frame_utils.readDispSintelStereo
-        for img1_path, disp_path in zip(image1_list[:10], disp_list[:10]):
+        for img1_path, disp_path in zip(image1_list, disp_list):
             assert img1_path.split('/')[-2:] == disp_path.split('/')[-2:]
             # img1 = Image.open(img1_path)
             # disp = disp_reader(disp_path)

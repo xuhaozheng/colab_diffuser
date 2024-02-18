@@ -925,8 +925,8 @@ def main():
         for step, batch in enumerate(train_dataloader):
             with accelerator.accumulate(unet):
                 # Convert images to latent space
-                print('pixel_values',batch["pixel_values"].shape)
-                print('disp_values',batch["disp_values"].shape)
+                # print('pixel_values',batch["pixel_values"].shape)
+                # print('disp_values',batch["disp_values"].shape)
                 latents = vae.encode(batch["pixel_values"].to(weight_dtype)).latent_dist.sample()
                 latents = latents * vae.config.scaling_factor
 
